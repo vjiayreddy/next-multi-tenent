@@ -2,20 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.custom-swiper-container {
+  position: relative;
+  padding: 0 40px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.custom-swiper-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.custom-swiper-button:hover {
+  background-color: #f0f0f0;
+}
+
+.custom-swiper-button-prev {
+  left: 20px;
+}
+
+.custom-swiper-button-next {
+  right: 20px;
+}
+
+.custom-swiper-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.clip-polygon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.auto-width-slide {
+  width: auto !important;
+  max-width: 300px;
+  height: auto;
 }
